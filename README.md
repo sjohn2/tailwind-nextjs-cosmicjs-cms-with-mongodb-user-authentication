@@ -1,11 +1,11 @@
 # Dynamic Cosmic CMS with authentication built using Next JS 12+, Tailwind CSS 3, MongoDB, Cosmicjs CMS and TypeScript )
 
-<p align="center">
-  Next js bootstrap template from - <a href="https://creativedesignsguru.com/demo/nextjs-landing-page/">Creative Design Guru</a>
-</p>
-
-
 ### DEMO
+<a href="https://tailwind-nextjs-cosmicjs-cms-with-mongodb-user-authentication.vercel.app/">Vercel Link</a>
+
+#Features Implemented
+- Dynamic content (hero video, 4 news tiles) from cosmicjs 
+- Registration & Login using JWT , MongoDB (Atlanta) 
 
 ### Tech Stack
 - Next.js
@@ -138,6 +138,12 @@ If you are VSCode users, you can have a better integration with VSCode by instal
 Pro tips: if you need a project wide type checking with TypeScript, you can run a build with <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> on Mac.
 
 ### Contributions
+<p align="left">
+  Next js bootstrap template from - <a href="https://creativedesignsguru.com/demo/nextjs-landing-page/">Creative Design Guru</a>
+</p>
+
+
+
 
 Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
 
