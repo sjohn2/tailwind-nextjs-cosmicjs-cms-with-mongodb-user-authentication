@@ -5,6 +5,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
+});
+
+
 module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   trailingSlash: true,
@@ -15,6 +24,16 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
 });
 
+
+module.exports = {
+  eslint: {
+    dirs: ['pages',], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
+  },
+};
+
+
+
+
 module.exports = {
   typescript: {
     // !! WARN !!
@@ -23,14 +42,4 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-};
-
-
-
-module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-  },
-});
+}
