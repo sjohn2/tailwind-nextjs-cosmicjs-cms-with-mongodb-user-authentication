@@ -45,17 +45,21 @@ function classNames(...classes) {
 }
 
 export default function Nav() {
-  const [authToken, setAuthToken] = useState('');
+  const [authToken, setAuthToken] = useState("");
 
-  const cookies = getCookie('authToken_abc');
+  const cookies = getCookie("authToken_abc");
+  let cookiesValue = cookies;
   let cookieFlag = true;
-  if (cookies) {
-    console.log(cookies);
-
-    if (cookies === '00') {
+  console.log(cookiesValue);
+  if (cookiesValue) {
+    if (cookiesValue === "00") {
+      console.log(cookiesValue);
       cookieFlag = false;
     }
+  } else {
+    cookieFlag = false;
   }
+  
 
   useEffect(() => {
     setAuthToken(cookieFlag);
