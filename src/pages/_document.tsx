@@ -7,6 +7,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang={AppConfig.locale}>
+
         <Head />
         <body>
           <Main />
