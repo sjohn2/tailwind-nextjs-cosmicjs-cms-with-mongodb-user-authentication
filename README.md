@@ -68,14 +68,11 @@ Open http://localhost:3000 with your favorite browser to see your project. For y
 │   └── assets
 │       └── images       # Image used by default template
 ├── src
-│   ├── background       # Atomic background component
-│   ├── button           # Atomic button component
-│   ├── cta              # Atomic cta component
-│   ├── feature          # Atomic feature component
-│   ├── footer           # Atomic footer component
-│   ├── hero             # Atomic hero component
+│   ├── components       # Atomic components
+│   ├── lib              # Lib files for api, auth etc
+│   ├── models           # Data Schema
+│   ├── Store            # State Management (optional)
 │   ├── layout           # Atomic layout component
-│   ├── navigation       # Atomic navigation component
 │   ├── pages            # Next JS pages
 │   ├── styles           # PostCSS style folder with Tailwind
 │   ├── templates        # Default template
@@ -95,6 +92,15 @@ You can easily configure the theme. Please change the following file:
 - `src/template/Base.tsx`: the `Base` component using component blocks
 - `src/templates/*`: the list of component blocks
 - `src/*`: other folders in src are the atomic components used by components blocks
+
+### Important setting env file with Cosmic CMS details, JWToken & Atlas MongoDB
+- You need to create .env.local file and add these details from Cosmic JS
+COSMIC_BUCKET_SLUG=
+COSMIC_READ_KEY=
+COSMIC_PREVIEW_SECRET=
+JWT_SECRET_KEY=
+MONGODB_URI=mongodb+srv://abcracing:lwdXhYeTNzxzbV8v@cluster0.z0oxsg0.mongodb.net/?retryWrites=true&w=majority
+
 
 Here is the layer:
 
