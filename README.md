@@ -1,4 +1,4 @@
-# Landing Page Template built with Next JS 12+, Tailwind CSS 3 and TypeScript )
+# Dynamic Cosmic CMS with authentication built using Next JS 12+, Tailwind CSS 3, MongoDB, Cosmicjs CMS and TypeScript )
 
 <p align="center">
   Next js bootstrap template from - <a href="https://creativedesignsguru.com/demo/nextjs-landing-page/">
