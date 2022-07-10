@@ -95,12 +95,15 @@ You can easily configure the theme. Please change the following file:
 
 ### Important setting env file with Cosmic CMS details, JWToken & Atlas MongoDB
 - You need to create .env.local file and add these details from Cosmic JS
+  
+```
 COSMIC_BUCKET_SLUG=
 COSMIC_READ_KEY=
 COSMIC_PREVIEW_SECRET=
 JWT_SECRET_KEY=
 MONGODB_URI=
 
+```
 Here is the layer:
 
 - the entry point: `index.tsx` in `src/pages`
