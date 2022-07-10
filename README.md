@@ -1,4 +1,4 @@
-# Dynamic Cosmic CMS with authentication built using Next JS 12+, Tailwind CSS 3, MongoDB, Cosmicjs CMS and TypeScript )
+# Dynamic Cosmic CMS with authentication built using Next JS 12+, Tailwind CSS 3, MongoDB, Cosmicjs CMS and TypeScript ) 
 
 ### DEMO
 <a href="https://tailwind-nextjs-cosmicjs-cms-with-mongodb-user-authentication.vercel.app/">Vercel Link</a>
@@ -6,6 +6,7 @@
 #Features Implemented
 - Dynamic content (hero video, 4 news tiles, news detail page) from cosmicjs (decoupled/headless cms)
 - Registration & Login using JWT, MongoDB Atlas (cloud) 
+- PWA support / offline browsing for news pages
 
 ### Tech Stack
 - Next.js
