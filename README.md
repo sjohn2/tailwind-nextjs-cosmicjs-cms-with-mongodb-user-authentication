@@ -99,8 +99,7 @@ COSMIC_BUCKET_SLUG=
 COSMIC_READ_KEY=
 COSMIC_PREVIEW_SECRET=
 JWT_SECRET_KEY=
-MONGODB_URI=mongodb+srv://abcracing:lwdXhYeTNzxzbV8v@cluster0.z0oxsg0.mongodb.net/?retryWrites=true&w=majority
-
+MONGODB_URI=
 
 Here is the layer:
 
