@@ -4,8 +4,8 @@
 <a href="https://tailwind-nextjs-cosmicjs-cms-with-mongodb-user-authentication.vercel.app/">Vercel Link</a>
 
 #Features Implemented
-- Dynamic content (hero video, 4 news tiles) from cosmicjs 
-- Registration & Login using JWT , MongoDB (Atlanta) 
+- Dynamic content (hero video, 4 news tiles, news detail page) from cosmicjs (decoupled/headless cms)
+- Registration & Login using JWT, MongoDB Atlas (cloud) 
 
 ### Tech Stack
 - Next.js
@@ -21,7 +21,7 @@
 - mongodb-atlas
 - Nookies
 
-- MongoDB (Atlas)
+- MongoDB Atlas 
 - Cosmic JS (headless/cloud CMS API)
 
 
