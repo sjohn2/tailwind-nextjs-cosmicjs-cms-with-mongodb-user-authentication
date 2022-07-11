@@ -4,7 +4,7 @@ import CoverImage from './cover-image';
 
 export default function MoreStories({ posts }) {
   return (
-    <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols- xl:grid-cols-4 gap-5">
+    <div className="p-1 md:p-10 xl:p-20 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols- xl:grid-cols-4 gap-5">
       {posts.map((news) => (
         <div className="rounded overflow-hidden shadow-lg" key={news.slug}>
           <CoverImage

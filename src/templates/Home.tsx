@@ -28,7 +28,7 @@ export function Home(props) {
       <MoreStories posts={newsShortlisted} />
 
       <Banner />
-      <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+      <div className="p-1 md:p-10 xl:p-20 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
         <div className="rounded overflow-hidden shadow-lg">
           <h3 className="font-bold text-xl text-red-700">Featured Team</h3>
           <img

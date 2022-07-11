@@ -39,7 +39,7 @@ const Post = ({
       {router.isFallback ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
-<article className="container w-full md:max-w-34l mx-auto p-20">
+<article className="container w-full md:max-w-34l mx-auto p-1 md:p-10 xl:p-20">
         <PostHeader
            title={post.title}
            coverImage={post.metadata.cover_image}
