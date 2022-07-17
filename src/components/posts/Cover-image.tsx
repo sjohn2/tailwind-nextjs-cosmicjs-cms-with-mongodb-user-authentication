@@ -10,6 +10,8 @@ export default function CoverImage({ title, url, slug }) {
       className={cn('lazyload shadow-small w-full', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
+      width="480"
+      height="270"
       sizes="100vw"
       attributeConfig={{
         src: 'data-src',
