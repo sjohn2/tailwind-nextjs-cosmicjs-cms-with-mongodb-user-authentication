@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import CoverImage from './cover-image';
+import CoverImage from './Cover-image';
 
 export default function MoreStories({ posts }) {
   return (

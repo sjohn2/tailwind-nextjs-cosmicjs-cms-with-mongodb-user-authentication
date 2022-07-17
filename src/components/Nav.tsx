@@ -1,69 +1,56 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment } from "react";
 
-import { Popover, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { ChevronDownIcon } from '@heroicons/react/solid';
-import { getCookie } from 'cookies-next';
-import Link from 'next/link';
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { ChevronDownIcon } from "@heroicons/react/solid";
+
+import Link from "next/link";
+
+import { useContext } from "react";
+
+import UserContext from "../components/context/UserContext";
 
 const teams = [
   {
-    name: 'Alfa Romeo',
-    href: '#',
+    name: "Alfa Romeo",
+    href: "#",
   },
   {
-    name: 'Ferrari',
+    name: "Ferrari",
 
-    href: '#',
+    href: "#",
   },
   {
-    name: 'McLaren',
+    name: "McLaren",
 
-    href: '#',
+    href: "#",
   },
   {
-    name: 'Mercedes',
+    name: "Mercedes",
 
-    href: '#',
+    href: "#",
   },
 ];
 
 const schedule = [
   {
-    name: 'Full Schedule',
-    href: '#',
+    name: "Full Schedule",
+    href: "#",
   },
   {
-    name: 'Race Programme',
+    name: "Race Programme",
 
-    href: '#',
+    href: "#",
   },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Nav() {
-  const [authToken, setAuthToken] = useState("");
-
-  const cookies = getCookie("authToken_abc");
-  let cookiesValue = cookies;
-  let cookieFlag = true;
-  console.log(cookiesValue);
-  if (cookiesValue) {
-    if (cookiesValue === "00") {
-      console.log(cookiesValue);
-      cookieFlag = false;
-    }
-  } else {
-    cookieFlag = false;
-  }
-  
-
-  useEffect(() => {
-    setAuthToken(cookieFlag);
-  }, []);
+  let authToken = useContext(UserContext).state.authFlag;
+  //console.log("sign in" + authToken);
 
   return (
     <Popover className="relative bg-red-900">
@@ -90,15 +77,15 @@ export default function Nav() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-white',
-                      'group bg-red-900 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+                      open ? "text-gray-900" : "text-white",
+                      "group bg-red-900 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                     )}
                   >
                     <span>Schedule</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-white'
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-white"
                       )}
                       aria-hidden="true"
                     />
@@ -149,15 +136,15 @@ export default function Nav() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-white',
-                      'group bg-red-900 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+                      open ? "text-gray-900" : "text-white",
+                      "group bg-red-900 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                     )}
                   >
                     <span>Teams</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-white'
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-white"
                       )}
                       aria-hidden="true"
                     />
@@ -233,23 +220,22 @@ export default function Nav() {
             {authToken && (
               <Link
                 href={{
-                  pathname: '/account/login',
-                  query: { exit: '0' },
+                  pathname: "/account/logout",
+                  query: { exit: "0" },
                 }}
               >
-                <a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
+                <a suppressHydrationWarning className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
                   Sign Out
                 </a>
               </Link>
             )}
 
             {!authToken && (
-              <a
-                href="/account/login"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700"
-              >
-                Sign In
-              </a>
+              <Link href="/account/login">
+                <a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
+                  Sign In
+                </a>
+              </Link>
             )}
           </div>
         </div>
@@ -342,12 +328,26 @@ export default function Nav() {
                 </a>
               </div>
               <div>
-                <a
-                  href="/account/login"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700"
-                >
-                  Sign In
-                </a>
+                {authToken && (
+                  <Link
+                    href={{
+                      pathname: "/account/logout",
+                      query: { exit: "0" },
+                    }}
+                  >
+                    <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
+                      Sign Out
+                    </a>
+                  </Link>
+                )}
+
+                {!authToken && (
+                  <Link href="/account/login">
+                    <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700">
+                      Sign In
+                    </a>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -359,5 +359,6 @@ export default function Nav() {
 
 export const getInitialProps = async ({ query }) => {
   const { exit } = query;
+  
   return { exit };
 };

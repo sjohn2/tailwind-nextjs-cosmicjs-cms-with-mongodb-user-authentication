@@ -11,7 +11,7 @@ import { Footer } from '../../templates/Footer';
 import { Header } from '../../templates/Header';
 import { AppConfig } from '../../utils/AppConfig';
 
-function Signin() {
+function Signin({slug}) {
   const [credentials, setCredentials] = useState({
     username: '',
     password: '',
@@ -21,13 +21,15 @@ function Signin() {
 
   const router = useRouter();
 
+  console.log(slug);
+
   useEffect(() => {
     removeToken();
   }, []);
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
-    console.log(credentials);
+   // console.log(credentials);
   };
 
   async function handleSigninSubmit(e) {
@@ -72,7 +74,12 @@ function Signin() {
           secondary: '#FFFAEE',
         },
       });
-      router.push('/');
+      if(slug && slug !== ''){
+        router.push('/posts/'+slug);
+      }else{
+        router.push('/');
+      }
+      
     }
   }
 

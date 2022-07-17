@@ -6,13 +6,9 @@ import { useContext } from "react";
 import UserContext from '../../components/context/UserContext';
 import { Fragment, useEffect, useState } from 'react';
 
-import { Signin } from "../../components/auth/Signin";
 
+export default function Logout() {
 
-
-
-
-export default function Login() {
   const router = useRouter();
   const { exit } = router.query;
   const exitParser = JSON.stringify({ exit });
@@ -25,15 +21,14 @@ export default function Login() {
       path: "/",
     });
 
- 
-
-  
-  }
-
+    router.push('/account/login');
+  }  
   return (
-
     <>
-      <Signin ></Signin>
+      
     </>
   );
+
 }
+
+

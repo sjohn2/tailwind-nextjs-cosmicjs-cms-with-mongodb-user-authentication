@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+import { getCookie } from 'cookies-next';
 
 const jwtSecretKey = process.env.JWT_SECRET_KEY;
 
@@ -33,4 +34,18 @@ export function errorMessage(error, message) {
     error,
     message,
   };
+}
+
+export function isValidSession(){
+
+  let cookies = getCookie("authToken_abc");
+  let cookieFlag = false; 
+
+  if(cookies && cookies !== "00"){ //valid session
+    cookieFlag = true;
+  }else{ //first time
+    cookieFlag = false;
+  }
+
+  return cookieFlag;
 }
