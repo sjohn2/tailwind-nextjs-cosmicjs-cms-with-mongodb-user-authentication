@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Link from 'next/link';
 import Router from 'next/router';
@@ -9,15 +9,16 @@ import { Footer } from '../../templates/Footer';
 import { Header } from '../../templates/Header';
 import { AppConfig } from '../../utils/AppConfig';
 
+
 function Signup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
+  
   async function handleSignupSubmit(e) {
     e.preventDefault();
-    console.log('here');
-
+   
     try {
       const data = await registerUser({
         username,
@@ -34,6 +35,8 @@ function Signup() {
       console.log(error);
     }
   }
+
+
 
   return (
     <div className="antialiased text-gray-600">
@@ -76,6 +79,8 @@ function Signup() {
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                   id="passwordInput"
                   onChange={(e) => setPassword(e.target.value)}
+                  pattern="^(?=\D*\d)(?=.*?[a-zA-Z]).*$"
+                  title="Password must contain at least one letter and one number"
                 />
               </div>
               <div className="flex items-baseline justify-between">

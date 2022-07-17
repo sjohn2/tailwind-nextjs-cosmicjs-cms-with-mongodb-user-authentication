@@ -13,6 +13,7 @@ export default function CoverImage({ title, url, slug }) {
       width="480"
       height="270"
       sizes="100vw"
+      loading='lazy'
       attributeConfig={{
         src: 'data-src',
         srcSet: 'data-srcset',
